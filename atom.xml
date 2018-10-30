@@ -6,7 +6,7 @@
   <link href="/JerBlog/atom.xml" rel="self"/>
   
   <link href="https://jermyo.github.io/JerBlog/"/>
-  <updated>2018-10-16T12:46:27.574Z</updated>
+  <updated>2018-10-30T12:50:57.066Z</updated>
   <id>https://jermyo.github.io/JerBlog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于html中table表格tr,td的高度和宽度</title>
+    <link href="https://jermyo.github.io/JerBlog/2018/10/30/%E5%85%B3%E4%BA%8Ehtml%E4%B8%ADtable%E8%A1%A8%E6%A0%BCtr,td%E7%9A%84%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6/"/>
+    <id>https://jermyo.github.io/JerBlog/2018/10/30/关于html中table表格tr,td的高度和宽度/</id>
+    <published>2018-10-30T12:52:47.000Z</published>
+    <updated>2018-10-30T12:50:57.066Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于html中table表格tr-td的高度和宽度"><a href="#关于html中table表格tr-td的高度和宽度" class="headerlink" title="关于html中table表格tr,td的高度和宽度"></a>关于html中table表格tr,td的高度和宽度</h2><p>做网页的时候经常会遇到各种各样的问题，经常遇到的一个就是会碰到表格宽度对不齐的问题。首先，来分析一下这三个标签中height和width的区别：</p><h4 id="1、table中的width和height设置及其作用："><a href="#1、table中的width和height设置及其作用：" class="headerlink" title="1、table中的width和height设置及其作用："></a>1、table中的width和height设置及其作用：</h4><p>table中设置的height其实是设置一个最小值，也就是当表格中的内容或者行高总值超过这个设置值时，会自动延长表格的height值，当表格中的内容或者行高没有达到这个值时，会自动扩大到这个值。</p><p>table中设置的width值一般为表格宽度的最大值，不能改变，即使内部的内容宽度超过也不能改变。（这个内部内容如果是图片的话是可以改变表格宽度的。）</p><h4 id="2、tr标签中width和height设置及其作用："><a href="#2、tr标签中width和height设置及其作用：" class="headerlink" title="2、tr标签中width和height设置及其作用："></a>2、tr标签中width和height设置及其作用：</h4><p>tr标签里面的width设置不起任何作用，因为从第一点可以看出，表格的width是不能改变的，tr标签当然就不起作用了。</p><p>所以在tr中只有讨论height设置的可能了，tr中的height设置和几个tr之间的设置有关。</p><p>当几个tr都设置了height的具体数值时，各个tr的height按照设置的值的比例来分配总的height值，注意这里说的是总的height值。</p><p>当几个tr都没有设置height具体值时，平均分配总的height值。</p><p>当有的tr设置了具体的数值，有的没有设置具体的数值为默认时，先保证各个tr的基本需要，剩下的再满足设置了具体值的tr，之后再全部给没有设置具体值的tr。</p><p>最后一种情况还要考虑总的宽度不够tr总的设置值的情况，不够的话要满足tr的基本需要，这里会自动延长表格的height的。然后再考虑设置了height的tr，最后考虑没有设置height的tr。</p><h4 id="3、td标签中width和height设置及其作用："><a href="#3、td标签中width和height设置及其作用：" class="headerlink" title="3、td标签中width和height设置及其作用："></a>3、td标签中width和height设置及其作用：</h4><p>td标签里面的width和height都是起作用的。先看td的width吧，某一个td的width是和所处的一列每个td的width都相关的，取其中最大的width作为这一列中每个td的width，一定要从全局把握某个td的width，不能从这一个的width设置就断言它的宽度就是多少，这样是不准确的。</p><p>当我们把每一列的宽度都弄清楚之后，事情就好办了。这时候各个td之间的宽度分配按照第二条中各tr的height分配规律，</p><p>有一点不同的是全部是默认的情况下，各td的width不是平均分配，而是根据各自的实际内容按比例分配。</p><p>再看看td的height设置吧，各个td的height要看这个td所在的行的最大高度来确定这一行的每个td的height，然后各个行的高度情况和tr中的height分配原则是一样的。</p><p>还有一点要注意，就是td的height和tr的height之间的关系。首先肯定是根据内容的需要，在这个基础上，再根据设置的值来确定，哪个设置的值大就按照哪个，如果一个设置了值一个没有设置值，那么按照设置值的算。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;关于html中table表格tr-td的高度和宽度&quot;&gt;&lt;a href=&quot;#关于html中table表格tr-td的高度和宽度&quot; class=&quot;headerlink&quot; title=&quot;关于html中table表格tr,td的高度和宽度&quot;&gt;&lt;/a&gt;关于html中tabl
+      
+    
+    </summary>
+    
+      <category term="布局" scheme="https://jermyo.github.io/JerBlog/categories/%E5%B8%83%E5%B1%80/"/>
+    
+    
+      <category term="布局" scheme="https://jermyo.github.io/JerBlog/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>vue移动端项目，屏幕适配方法，rem</title>
